@@ -85,7 +85,7 @@ int launch_prog(char **args)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		if (execv(args[0], args) == -1)
 		{
 			perror("Failed to execute command\n");
 			exit(0);
